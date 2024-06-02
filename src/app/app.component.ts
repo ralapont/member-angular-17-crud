@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'member-angular-17-crud';
+  title = 'Gestion de Miembros';
 }

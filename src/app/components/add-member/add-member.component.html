@@ -1,0 +1,78 @@
+<div class="col-md-6">
+    <h4>Crear un miembro {{ member.firstName }} {{ member.lastName }}</h4>
+</div>
+
+<div class="container">
+    <form >
+        <input type="hidden" id="memberId" name="memberId" [(ngModel)]="member.memberId" />
+        <div class="row">
+            <div class="col">
+                <label for="lastName">Apellido</label>
+                <input type="text" class="form-control" id="lastName" [(ngModel)]="member.lastName" name="lastName" />
+            </div>
+            <div class="col">
+                <label for="firstName">Nombre</label>
+                <input type="text" class="form-control" id="firstName" [(ngModel)]="member.firstName" name="firstName" />
+            </div>
+            <div class="col">
+                <label for="suffix">Sufijo</label>
+                <input type="text" class="form-control" id="suffix" [(ngModel)]="member.suffix" name="suffix" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <label for="expiration">Expiration</label>
+                <input type="date" class="form-control" id="expiration" [(ngModel)]="member.expiration" name="expiration" />
+            </div>
+            <div class="col">
+                <label for="email">Correo Electronico</label>
+                <input type="text" class="form-control" id="email" [(ngModel)]="member.email" name="email" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <label for="street">Calle</label>
+                <input type="text" class="form-control" id="street" [(ngModel)]="member.street" name="street" />
+            </div>
+            <div class="col">
+                <label for="city">Ciudad</label>
+                <input type="text" class="form-control" id="city" [(ngModel)]="member.city" name="city" />
+            </div>
+            <div class="col">
+                <label for="state">Estado</label>
+                <input type="text" class="form-control" id="state" [(ngModel)]="member.state" name="state" />
+            </div>
+            <div class="col">
+                <label for="zip">Código Postal</label>
+                <input type="text" class="form-control" id="zip" [(ngModel)]="member.zip" name="zip" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <label for="phone">Teléfono</label>
+                <input type="text" class="form-control" id="phone" [(ngModel)]="member.phone" name="phone" />
+            </div>
+            <div class="col">
+                <label for="interests">Intereses</label>
+                <textarea name="textarea"  class="form-control" id="interests" [(ngModel)]="member.interests" name="interests" rows="2" cols="50">
+                    Write something here
+                </textarea>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <button   class="btn btn-primary btn-sm active" role="button" aria-pressed="true" (click)="saveTutorial()">Crear</button>
+            </div>
+        </div>
+    </form>
+
+    @if (message.length > 0) {
+        <div class="alert alert-success" role="alert">
+            {{ message }}
+        </div>
+    }
+</div>
