@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Member } from '../../models/member.model';
 import { MemberService } from '../../services/member.service';
+import { State } from '../../models/state.model';
+import { StateService } from '../../services/state.service';
 
 @Component({
   selector: 'app-add-member',
@@ -21,9 +23,25 @@ export class AddMemberComponent {
     phone: '',
     interests: ''
   }
+  states?: State[];
   message: string = '';
 
-  constructor(private memberService: MemberService) { }
+  constructor(private memberService: MemberService, private stateService: StateService) { }
+
+  ngOnInit(): void {
+    this.retrieveStates();
+  }
+
+  retrieveStates(): void {
+    this.stateService.getAll()
+      .subscribe({
+        next: (data) => {
+          this.states = data;
+          console.log(data);
+        },
+        error: (e) => console.error(e)
+      });
+  }
 
   saveTutorial(): void {
 

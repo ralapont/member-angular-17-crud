@@ -42,7 +42,12 @@
             </div>
             <div class="col">
                 <label for="state">Estado</label>
-                <input type="text" class="form-control" id="state" [(ngModel)]="member.state" name="state" />
+                <select class="form-select" aria-label="Default select example" id="state" [(ngModel)]="member.state" name="state" >
+                    <option selected>Open this select menu</option>
+                    @for (state of states; track member.memberId; let i = $index) {
+                        <option value={{state.codigo}}>{{state.state}}</option>
+                    }
+                </select>
             </div>
             <div class="col">
                 <label for="zip">Código Postal</label>
