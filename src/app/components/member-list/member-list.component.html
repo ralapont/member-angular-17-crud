@@ -1,24 +1,24 @@
 <div class="list row">
-    <div class="col-md-6">
+    <div class="col-md-12">
         <h4>Member List</h4>
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Apellido</th>
-                    <th scope="col">suffix</th>
-                    <th scope="col">F. Exp</th>
-                    <th scope="col">email</th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
+                    <th>#</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>suffix</th>
+                    <th>F. Expiration</th>
+                    <th>email</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
             @for (member of members; track member.memberId; let i = $index) {
                 <tr>
-                    <th scope="row">{{ member.memberId }}</th>
+                    <td>{{ member.memberId }}</td>
                     <td>{{ member.lastName }}</td>
                     <td>{{ member.firstName }}</td>
                     <td>{{ member.suffix }}</td>
